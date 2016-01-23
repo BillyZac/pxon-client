@@ -9,18 +9,36 @@ app.controller('MainController', function($scope, $http) {
     url: pxonServerUrl
   })
   .then(function(pxonData) {
-    $scope.row = []
-    for (var i = 0; i < 150; i++) {
-      $scope.row.push({
-        id: i,
-        color: 'rgba(200, 0, 10, 0.1)'
-      })
+    var matrix = []
+
+    for (var y=0; y<130; y++) {
+      var row = []
+      for (var x=0; x<130; x++) {
+        var blankPixel = {
+          x: x,
+          y: y,
+          color: "rgba(0, 80, 30, 0.1)",
+          size: 15}
+        row.push(blankPixel)
+      }
+      matrix.push(row)
     }
-    console.log(pxonData.data.pxif.pixels)
-    // List the pixels:
-    pxonData.data.pxif.pixels.forEach(function(pixel) {
-      console.log('x:' + pixel.x + '  y:' + pixel.y)
-      $scope.row[pixel.x].color = pixel.color
-    })
+
+    // var i = 0
+    // pxonData.data.pxif.pixels.forEach(function(pixel) {
+    //   i++
+    //   matrix[pixel.y][pixel.y] = pixel
+    // })
+
+    // Testing:
+    // for (var y=0; y<130; y++) {
+    //   for (var x=0; x<130; x++) {
+    //     if (matrix[x][y].color != "rgba(0, 0, 0, 0)") {
+    //       console.log(matrix[x][y])
+    //     }
+    //   }
+    // }
+
+    $scope.matrix = matrix
   })
 })
