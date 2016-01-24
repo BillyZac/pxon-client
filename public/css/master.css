@@ -18,7 +18,7 @@
 
 
 .pixel {
-  height: 15px;
+  height: 15px; /* This must be width / num of pixels, currently 750/50 = 15 */
   flex-grow: 1;
   margin: 0;
   border-radius: 50%;
