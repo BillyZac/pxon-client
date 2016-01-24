@@ -1,20 +1,29 @@
+/*body * {
+  outline: red 1px solid;
+}*/
+
 .matrix {
   display: flex;
   flex-direction: column;
+  width: 750px;
+  margin: 50px auto;
 }
 
 .row {
-  margin: 0;
   display: flex;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 
 .pixel {
-  width:  15px;
   height: 15px;
+  flex-grow: 1;
   margin: 0;
-  /*display: inline-block;*/
-  /*float: left;*/
   border-radius: 50%;
+}
+
+.pixel:hover {
+  outline: 4px solid aqua;
 }

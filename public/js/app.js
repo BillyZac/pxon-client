@@ -20,7 +20,7 @@ app.controller('MainController', function($scope, $http) {
         var blankPixel = {
           x: x,
           y: y,
-          color: "rgba(0, 0, 0, 0)",
+          color: "rgba(10, 10, 30, 0.03)",
           size: 15}
         row.push(blankPixel)
       }
@@ -35,13 +35,13 @@ app.controller('MainController', function($scope, $http) {
     })
 
     // Testing:
-    for (var y=0; y<pixelWidth; y++) {
-      for (var x=0; x<pixelWidth; x++) {
-        if (matrix[x][y].color != "rgba(0, 0, 0, 0)") {
-          console.log(matrix[x][y])
-        }
-      }
-    }
+    // for (var y=0; y<pixelWidth; y++) {
+    //   for (var x=0; x<pixelWidth; x++) {
+    //     if (matrix[x][y].color != "rgba(0, 0, 0, 0)") {
+    //       console.log(matrix[x][y])
+    //     }
+    //   }
+    // }
 
     $scope.matrix = matrix
   })
