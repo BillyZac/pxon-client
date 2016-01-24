@@ -11,10 +11,10 @@
 
 
 .pixel {
-  width:  5px;
-  height: 5px;
+  width:  15px;
+  height: 15px;
   margin: 0;
   /*display: inline-block;*/
   /*float: left;*/
-  /*border-radius: 50%;*/
+  border-radius: 50%;
 }
