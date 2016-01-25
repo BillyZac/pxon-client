@@ -1,7 +1,7 @@
 var app = angular.module('app', [])
 
-var pxonServerUrl = 'http://localhost:3030/'
-// var pxonServerUrl = 'https://pxon.herokuapp.com/'
+// var pxonServerUrl = 'http://localhost:3030/'
+var pxonServerUrl = 'https://pxon.herokuapp.com/'
 var pixelWidth = 50
 var pixelHeight = 37
 // Ratio between the "pixelated" image we're about to show in the DOM
