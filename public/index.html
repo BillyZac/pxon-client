@@ -7,8 +7,8 @@
   </head>
   <body ng-controller="MainController">
     <div class="matrix">
-      <div class="row" ng-repeat="row in matrix">
-        <div class="pixel" data-coordinates="{{pixel.x}}-{{pixel.y}}" ng-repeat="pixel in row" style="background-color: {{pixel.color}}"></div>
+      <div class="row" ng-repeat="row in matrix track by $index">
+        <div class="pixel" data-coordinates="{{pixel.x}}-{{pixel.y}}" ng-repeat="pixel in row track by $index" style="background-color: {{pixel.color}}"></div>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.js"></script>

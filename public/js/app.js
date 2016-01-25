@@ -1,9 +1,12 @@
 var app = angular.module('app', [])
 
-// var pxonServerUrl = 'http://localhost:3030/'
-var pxonServerUrl = 'https://pxon.herokuapp.com/'
-var scalingFactor = 0.25 // Ratio between original pixel dimensions and the "pixelated" image we're about to show in the DOM
-var pixelWidth = 50 // Using this for width and height of the resulting image
+var pxonServerUrl = 'http://localhost:3030/'
+// var pxonServerUrl = 'https://pxon.herokuapp.com/'
+var pixelWidth = 50
+var pixelHeight = 37
+// Ratio between the "pixelated" image we're about to show in the DOM
+// and the original pixel dimensions of the image on the server.
+var scalingFactor = pixelWidth / 500
 
 app.controller('MainController', function($scope, $http) {
   $http({
@@ -14,7 +17,7 @@ app.controller('MainController', function($scope, $http) {
 
     // Initialize the matrix with blank pixels
     var matrix = []
-    for (var y=0; y<pixelWidth; y++) {
+    for (var y=0; y<pixelHeight; y++) {
       var row = []
       for (var x=0; x<pixelWidth; x++) {
         var blankPixel = {
