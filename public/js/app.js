@@ -34,7 +34,9 @@ app.controller('MainController', function($scope, $http) {
     pxonData.data.pxif.pixels.forEach(function(pixel) {
       var x = Math.ceil(pixel.x * scalingFactor)
       var y = Math.ceil(pixel.y * scalingFactor)
-      matrix[y][x] = pixel
+      if (matrix[y] && matrix[y][x]) {
+        matrix[y][x] = pixel
+      }
     })
 
     // Testing:
